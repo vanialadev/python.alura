@@ -120,4 +120,61 @@ pesos = tuple(materias_com_peso.values())
 print pesos
 print type(pesos)
 
+convite = 'Romulo Henrique'
 
+parte1 = convite[0:4]
+parte2 = convite[11:15]
+
+print '%s %s' % (parte1, parte2)
+
+convite = 'Vania Almeida'
+
+tamanho = len(convite)
+parte1 = convite[0:4]
+parte2 = convite[tamanho-4:tamanho]
+
+print '%s %s' % (parte1, parte2)
+
+def gera_nome_convite_1():
+    convite = 'Flavio Henrique'
+    posicao_final = len(convite)
+    posicao_inicial = posicao_final - 4
+    parte1 = convite[0:4]
+    parte2 = convite[posicao_inicial:posicao_final]
+    print '%s %s' % (parte1, parte2)
+
+gera_nome_convite_1()
+
+def gera_nome_convite(convite):
+    posicao_final = len(convite)
+    posicao_inicial = posicao_final - 4
+    parte1 = convite[0:4]
+    parte2 = convite[posicao_inicial:posicao_final]
+    return parte1 + ' ' + parte2
+
+codigo = gera_nome_convite('Erica Rodrigues')
+
+print codigo
+
+print 'O código gerado foi %s' % (codigo)
+
+
+def gera_nome_convite3(nome):
+	posicao_final = len(nome)
+	posicao_inicial = posicao_final - 4
+	parte1 = nome[0:4]
+	parte2 = nome[posicao_inicial:posicao_final]
+	return parte1 + ' ' + parte2
+
+def envia_convite3(nome):
+	print 'Enviando convite para %s'  % (nome)
+
+nome = gera_nome_convite3('Doce gata')
+
+envia_convite3(nome)
+
+def processa_convite(nome):
+    codigo = gera_nome_convite3(nome)
+    envia_convite3(codigo)
+
+processa_convite('Nao sei mais nomes')
