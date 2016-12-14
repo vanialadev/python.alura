@@ -43,4 +43,30 @@ print 'Convite do ' + convite
 
 print 'Convite do %s idade %s' % (convite, idade)
 
+convite1 = 'Flavio Almeida'
+convite2 = 'Nico Steappat'
+convite3 = 'Rômulo Henrique'
+
+convites = ['Flavio Almeida', 'Nico Steappat', 'Rômulo Henrique']
+
+print convites
+print convites[0]
+print convites[2]
+print convites[0:2]
+
+convites.append('Vitor Marcos')
+
+print convites
+
+convites.append(10)
+
+print convites
+
+convites.remove(10) #remove pelo o conteudo e nao pelo o index
+
+print convites
+
+convites.remove('Rômulo Henrique')
+
+print convites
 
