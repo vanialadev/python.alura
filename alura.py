@@ -70,3 +70,54 @@ convites.remove('Rômulo Henrique')
 
 print convites
 
+tipos_convites = ['vip', 'normal', 'meia', 'cortesia']
+tipos_convites.append('penetra')
+
+print type(tipos_convites)
+print tipos_convites
+
+tipos_convites = ('vip', 'normal', 'meia', 'cortesia')
+
+print type(tipos_convites)
+print tipos_convites[0:2]
+
+convites_com_valor = {'vip' : 60, 'normal' : 40, 'meia' : 30, 'cortesia' : 0}
+
+print convites_com_valor
+
+print convites_com_valor.keys()
+print convites_com_valor.values()
+
+status_civil = ('casado', 'solteiro') + ('divorciado',) ##cuidado, precisa ter a virgula após 'divorciado'
+
+print status_civil
+print type(status_civil)
+
+print max([10, 5, 7])
+print min((10, 5, 7))
+
+nomes_tupla = ('Leonardo', 'Flávio', 'Rômulo')
+nomes_lista = nomes = ['Leonardo', 'Flávio', 'Rômulo']
+
+print sorted(nomes_tupla)
+print sorted(nomes_lista)
+
+print nomes_tupla
+
+nomes_tupla = sorted(nomes_tupla)
+
+print nomes_tupla
+
+materias_com_peso = {'Equacoes Diofantinas' : 3, 'Algebra Relacional' : 2, 'Portugues instrumental' : 4}
+pesos = list(materias_com_peso) #por padrao pega as keys
+
+print type(materias_com_peso)
+print pesos
+print type(pesos)
+
+pesos = tuple(materias_com_peso.values())
+
+print pesos
+print type(pesos)
+
+
