@@ -178,3 +178,60 @@ def processa_convite(nome):
     envia_convite3(codigo)
 
 processa_convite('Nao sei mais nomes')
+
+nome = raw_input()
+
+print nome
+
+ano = raw_input()
+
+print ano
+
+# data = 2015 - ano aquianoé string nao vai dar certo tem que pasear
+
+ano_como_inteiro = int (ano)
+
+data = 2015 - ano_como_inteiro
+
+print data
+
+def cadastrar(nomes):
+    print 'Digite um nome'
+    nome = raw_input()
+    nomes.append(nome)
+    print nomes
+
+nomes = []
+cadastrar(nomes)
+
+ano_como_str = raw_input()
+ano = int (ano_como_str)
+idade = 2016 - ano
+print idade
+
+from datetime import date
+
+ano_como_string = raw_input()
+ano = int(ano_como_string)
+ano_atual = date.today().year
+print ano_atual - ano
+
+hoje  = date.today()
+
+print hoje.year
+print hoje.month
+print hoje.day
+print hoje.ctime()
+
+numeros = [1, 2, 3]
+numeros.remove(1) #remove o valor e nao o indice
+print numeros
+
+def remover(nomes):
+    print 'Qual nome voce gostaria de remover?'
+    nome = raw_input()
+    nomes.remove(nome)
+    print nomes
+
+nomes = ['vania', 'erica', 'daniel', 'larissa', 'mac']
+remover(nomes)
