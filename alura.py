@@ -235,3 +235,28 @@ def remover(nomes):
 
 nomes = ['vania', 'erica', 'daniel', 'larissa', 'mac']
 remover(nomes)
+
+
+letra = raw_input('Digite uma letra: ')
+if letra == 'a':
+    print 'Ok, essa era a letra esperada'
+else:
+    print 'Hum, essa nao era a letra esperada'
+
+
+frase = 'Eu amo Python'
+print frase
+if len(frase) > 10:
+    if frase == 'Eu amo Python':
+        print 'Eu também'
+    else:
+        print 'Ham?'
+else:
+    print 'Tamanho insuficiente'
+
+frase = 'Python'
+contador = 0
+while contador < len(frase):
+    print frase[contador]
+    contador += 1
+print 'Fim'
