@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+import re
 
 def cadastrar(nomes):
     print 'Digite um nome'
@@ -35,6 +36,14 @@ def procurar(nomes):
     else:
         print 'Nome %s não está cadastrado' % (nome)
 
+def proucrar_regex(nomes):
+    print 'Digite a expressão regular'
+    regex = raw_input()
+    nomes_concatenados = ' '.join(nomes)
+    print nomes_concatenados
+    resultados = re.findall(regex, nomes_concatenados)
+    print resultados
+
 
 def menu():
     nomes = []
@@ -57,4 +66,7 @@ def menu():
 
         elif escolha == '5':
             procurar(nomes)
+
+        elif escolha == '6':
+            proucrar_regex(nomes)
 menu()
