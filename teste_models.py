@@ -101,3 +101,38 @@ print perfil_vip.obter_creditos()
 conta_corrente  = Conta_Corrente('Leonardo', 2000, 50)
 
 print conta_corrente.calcular_imposto()
+
+arquivo = open('perfis.csv', 'r')
+
+linha = arquivo.readline()
+print linha
+
+for linha in arquivo:
+    print linha
+
+arquivo.close()
+
+arquivo = open('novos_perfis.csv', 'w')
+
+arquivo.write('Pedro Gomes, 85-55555555, Gomes e Amigos \n')
+
+arquivo.close()
+
+#arquivo = open('novos_perfis', 'r')
+
+#print arquivo.readline()
+#arquivo.close()
+
+arquivo = open('teste.txt', 'a')
+arquivo.write('Python rocks \n')
+
+print arquivo.mode
+arquivo.close()
+
+logo = open('python-logo.png', 'rb')
+data = logo.read()
+logo.close()
+
+logo2= open('python-logo2.png', 'wb')
+logo2.write(data)
+logo2.close()
