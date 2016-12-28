@@ -129,6 +129,7 @@ arquivo.write('Python rocks \n')
 print arquivo.mode
 arquivo.close()
 
+"""
 logo = open('python-logo.png', 'rb')
 data = logo.read()
 logo.close()
@@ -136,3 +137,14 @@ logo.close()
 logo2= open('python-logo2.png', 'wb')
 logo2.write(data)
 logo2.close()
+"""
+
+perfis = Perfil_Vip.gerar_perfis('perfis.csv')
+print type(perfis[0])
+
+for perfil in perfis:
+    perfil.imprimir()
+perfil = Perfil_Vip('Joao','2222222','Caelum')
+print 'teste %s' % perfil.apelido
+
+
