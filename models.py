@@ -7,9 +7,27 @@ class Perfil(object):
         self.nome = nome
         self.telefone = telefone
         self.empresa = empresa
+        self.__curtidas = 0
 
     def imprimir(self):
-        print 'Nome: %s, Telefone: %s, Empresa: %s' % (self.nome, self.telefone, self.empresa)
+        print 'Nome: %s, Telefone: %s, Empresa: %s, Curtidas %d' % (self.nome, self.telefone, self.empresa, self.__curtidas)
+
+    def curtir(self):
+        self.__curtidas += 1
+
+    def obter_curtidas(self):
+        return self.__curtidas
+
+
+class Perfil_Vip(Perfil):
+    'Classe padrão para perfis de usuários vips'
+
+    def __init__(self, nome, telefone, empresa, apelido):
+        super(Perfil_Vip, self).__init__(nome, telefone, empresa)
+        self.apelido = apelido
+
+    def obter_creditos(self):
+        return super(Perfil_Vip, self).obter_curtidas() * 10.0
 
 
 class Data(object):
@@ -42,3 +60,37 @@ class Pessoa(object):
 
     def imprime_imc(self):
         print 'Imc de %s é: %.2f' % (self.nome, self.calcula_imc())
+
+
+class Retangulo(object):
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.__area = x * y
+
+    def obter_area(self):
+        return self.__area
+
+
+class Conta(object):
+
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
+
+    def calcular_imposto(self):
+        self.saldo *= 0.1
+        return self.saldo
+
+
+class Conta_Corrente(Conta):
+
+    def __init__(self, titular, saldo, bonus): # se a construtor for igual ao pai nao declara na filha
+        super(Conta_Corrente, self).__init__(titular, saldo)
+        self.bonus = bonus
+
+    def calcular_imposto(self):
+        return super(Conta_Corrente, self).calcular_imposto() + self.bonus
+
+

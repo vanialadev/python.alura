@@ -3,6 +3,10 @@
 from models import Perfil
 from models import Data
 from models import Pessoa
+from models import Retangulo
+from models import Perfil_Vip
+from models import Conta
+from models import Conta_Corrente
 
 perfil1_nome = 'Flavio Almeida'
 perfil1_telefone = 'nao informado'
@@ -66,3 +70,34 @@ d.imprime()
 
 pessoa = Pessoa('Ronaldo', 105, 1.78)
 pessoa.imprime_imc()
+
+perfil.curtir()
+perfil.curtir()
+
+print perfil.obter_curtidas()
+
+
+ret = Retangulo(2,3)
+print ret.obter_area()
+ret._Retangulo__area = 10
+print ret._Retangulo__area
+
+perfil._Perfil__curtidas = 9999999
+print perfil._Perfil__curtidas
+
+print perfil.obter_curtidas()
+
+perfil.imprimir()
+
+perfil_vip = Perfil_Vip('Vania Almeida', 'nao informado', 'Alura', 'vaniala')
+
+print perfil_vip.apelido
+
+perfil_vip.curtir()
+perfil_vip.curtir()
+print perfil_vip.obter_curtidas()
+print perfil_vip.obter_creditos()
+
+conta_corrente  = Conta_Corrente('Leonardo', 2000, 50)
+
+print conta_corrente.calcular_imposto()
