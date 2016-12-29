@@ -112,11 +112,11 @@ for linha in arquivo:
 
 arquivo.close()
 
-arquivo = open('novos_perfis.csv', 'w')
-
-arquivo.write('Pedro Gomes, 85-55555555, Gomes e Amigos \n')
-
-arquivo.close()
+# arquivo = open('novos_perfis.csv', 'w')
+#
+# arquivo.write('Pedro Gomes, 85-55555555, Gomes e Amigos \n')
+#
+# arquivo.close()
 
 #arquivo = open('novos_perfis', 'r')
 
@@ -147,4 +147,50 @@ for perfil in perfis:
 perfil = Perfil_Vip('Joao','2222222','Caelum')
 print 'teste %s' % perfil.apelido
 
+try:
+    arquivo = open('arquivo_nao_existe.txt', 'r')
+    valores = arquivo.readline(',')
+    Perfil(*valores)
+    print 'arquivo foi aberto'
+    arquivo.close()
+except IOError as erro:
+    print 'Erro de IO %s' % erro
+except TypeError as erro:
+    print 'TypeErro %s' % erro
 
+try:
+    arquivo = open('novos_perfis.csv', 'r')
+    valores = arquivo.readline(';')
+    Perfil(*valores)
+    print 'arquivo foi aberto'
+    arquivo.close()
+except IOError as erro:
+    print 'Erro de IO %s' % erro
+except TypeError as erro:
+    print 'TypeErro %s' % erro
+except Exception as erro:
+    print 'Exception %s' % erro
+
+arquivo = None
+try:
+    arquivo = open('perfis.csv', 'r')
+    valores = arquivo.readline().split(':')
+    Perfil(*valores)
+    print 'arquivo foi aberto'
+  #  arquivo.close()
+except (IOError, TypeError, StandardError) as erro:
+    print 'DEu erro %s' % erro
+finally:
+    if arquivo is not None:
+        print 'fechando arquivo'
+        arquivo.close()
+
+try:
+    with open('perfis.csv', 'r') as arquivo:
+        for linha in arquivo:
+            print linha
+except Exception as erro:
+    print 'Exception %s' % erro
+
+
+perfis = Perfil.gerar_perfis('novos_perfis.csv')
